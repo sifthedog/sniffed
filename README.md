@@ -1,6 +1,6 @@
 # Sniffed
 
-## This is under development (not a single line of code has been added so far), so I wouldn't add to your project and expect it to work if I were you.
+## It's working. But is it? If you wanna help, you can start with testing for multiple Rails versions
 
 Have you ever faced a code that, for whatever reason, does something like this?
 ```ruby
@@ -43,11 +43,16 @@ Or install it yourself as:
 Just add `sniffed` to the model you want to keep track of those changes and then starting using like:
 
 ```ruby
-dog.sniffed_changes # if you are a funny guy like me
-# => { 'first_name' => ['Jujuba', 'Sif'], 'last_name' => ['The Crazy', 'The Dog'] }
 dog.commited_changes # if you are all serious
 # => { 'first_name' => ['Jujuba', 'Sif'], 'last_name' => ['The Crazy', 'The Dog'] }
 ```
+
+If, for whatever reason, you want to reset these changes:
+
+```ruby
+dog.reset_commited_changes
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
