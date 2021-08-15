@@ -3,6 +3,10 @@
 require_relative "sniffed/version"
 
 module Sniffed
-  class Error < StandardError; end
-  # Your code goes here...
+end
+
+require "sniffed/sniffer"
+
+ActiveSupport.on_load :active_record do
+  include Sniffed::Sniffer
 end
