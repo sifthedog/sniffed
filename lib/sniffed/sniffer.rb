@@ -29,9 +29,6 @@ module Sniffed
         previous_changes.each_pair(&track_commited_change)
       end
 
-      def testing
-      end
-
       def track_commited_change
         lambda do |(attribute, (previous_value, current_value))|
           if @unfiltered_commited_changes.key?(attribute)
