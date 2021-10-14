@@ -1,0 +1,23 @@
+name: Main
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          bundler-cache: true
+      - name: Testing
+        run: |
+          bundle exec rspec
+
