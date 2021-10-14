@@ -25,7 +25,6 @@ module Sniffed
       private
 
       def track_commited_changes
-        previous_changes.each_pair(&testing)
         previous_changes.each_pair(&track_commited_change)
       end
 
